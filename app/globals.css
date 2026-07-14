@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+:root {
+  --color-ivoire: #f5f1e8;
+  --color-sable: #e9e3d2;
+  --color-taupe: #a89b8c;
+  --color-or: #c9a35b;
+  --color-noir: #1e1e1e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background: var(--color-ivoire);
+  color: var(--color-noir);
+  font-family: var(--font-inter), Arial, sans-serif;
+}
+
+h1,
+h2,
+h3,
+.font-serif {
+  font-family: var(--font-playfair), Georgia, serif;
+}
+
+a,
+button {
+  font: inherit;
+}
+@keyframes breatheArrow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+.hero-arrow {
+  animation: breatheArrow 3.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-arrow {
+    animation: none;
+  }
+}
