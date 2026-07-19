@@ -13,20 +13,60 @@ const chapitres = [
   { title: "Le Geste", href: "#geste" },
   { title: "Prendre forme", href: "#prendre-forme" },
   { title: "Nos histoires", href: "#nos-histoires" },
+  { title: "Questions", href: "#questions" },
+  {
+    title: "Entrer en relation",
+    href: "#entrer-en-relation",
+  },
 ];
 
 const liensMobiles = [
   { title: "Accueil", href: "#accueil" },
-  { title: "Nos savoir-faire", href: "#savoir-faire" },
-  { title: "Ce qui nous anime", href: "#ce-qui-nous-anime" },
-  { title: "Entrer en relation", href: "#entrer-en-relation" },
+  {
+    title: "Nos savoir-faire",
+    href: "#savoir-faire",
+  },
+  {
+    title: "Ce qui nous anime",
+    href: "#ce-qui-nous-anime",
+  },
+  { title: "Questions", href: "#questions" },
+  {
+    title: "Entrer en relation",
+    href: "#entrer-en-relation",
+  },
 ];
+
+const lienPrincipalClassName =
+  "text-[12px] tracking-[0.035em] text-[#2F2C28] transition-colors duration-500 ease-out hover:text-[#C9A35B]";
 
 export default function Header() {
   const [menuOuvert, setMenuOuvert] = useState(false);
+  const [aDefile, setADefile] = useState(false);
 
   useEffect(() => {
-    document.body.style.overflow = menuOuvert ? "hidden" : "";
+    const observerDefilement = () => {
+      setADefile(window.scrollY > 24);
+    };
+
+    observerDefilement();
+
+    window.addEventListener("scroll", observerDefilement, {
+      passive: true,
+    });
+
+    return () => {
+      window.removeEventListener(
+        "scroll",
+        observerDefilement,
+      );
+    };
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = menuOuvert
+      ? "hidden"
+      : "";
 
     const fermerAvecEchap = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
@@ -38,7 +78,11 @@ export default function Header() {
 
     return () => {
       document.body.style.overflow = "";
-      window.removeEventListener("keydown", fermerAvecEchap);
+
+      window.removeEventListener(
+        "keydown",
+        fermerAvecEchap,
+      );
     };
   }, [menuOuvert]);
 
@@ -61,24 +105,20 @@ export default function Header() {
         return;
       }
 
-      const section = document.querySelector<HTMLElement>(href);
+      const section =
+        document.querySelector<HTMLElement>(href);
 
       if (!section) {
         return;
       }
 
-      /*
-       * Le navigateur place normalement le début technique de la section
-       * en haut de la fenêtre. Comme les chapitres possèdent une grande
-       * respiration intérieure, on descend volontairement un peu plus loin
-       * pour que leur contenu soit immédiatement bien cadré.
-       */
       const estMobile = window.innerWidth < 1024;
       const ajustement = estMobile ? 68 : 92;
 
       const destination = Math.min(
         section.offsetTop + ajustement,
-        document.documentElement.scrollHeight - window.innerHeight,
+        document.documentElement.scrollHeight -
+          window.innerHeight,
       );
 
       window.history.pushState(null, "", href);
@@ -91,12 +131,8 @@ export default function Header() {
 
     if (depuisMenu) {
       setMenuOuvert(false);
-
-      /*
-       * On laisse au menu le temps de libérer le scroll de la page avant
-       * de lancer la navigation.
-       */
       window.setTimeout(effectuerScroll, 120);
+
       return;
     }
 
@@ -106,15 +142,26 @@ export default function Header() {
   return (
     <>
       {/* HEADER PRINCIPAL */}
-      <header className="absolute left-0 top-0 z-50 w-full bg-[#F5F1E8]">
-        <div className="mx-auto flex h-[74px] max-w-[1500px] items-center justify-between px-6 sm:px-8 lg:px-12 xl:px-16">
+      <header
+        style={{ colorScheme: "light" }}
+        className={`fixed left-0 top-0 z-50 w-full [color-scheme:light] transition-all duration-500 ease-out ${
+          aDefile
+            ? "bg-[#F5F1E8]/92 shadow-[0_8px_30px_rgba(30,30,30,0.045)] backdrop-blur-xl"
+            : "bg-[#F5F1E8]"
+        }`}
+      >
+        <div
+          className={`mx-auto flex max-w-[1500px] items-center justify-between px-6 transition-[height] duration-500 ease-out sm:px-8 lg:px-12 xl:px-16 ${
+            aDefile ? "h-[66px]" : "h-[74px]"
+          }`}
+        >
           <a
             href="#accueil"
             onClick={(event) =>
               allerVersSection(event, "#accueil")
             }
             aria-label="Retour à l’accueil"
-            className="flex items-center gap-3"
+            className="flex items-center gap-3.5"
           >
             <Image
               src="/images/logo.svg"
@@ -122,7 +169,9 @@ export default function Header() {
               width={36}
               height={36}
               priority
-              className="h-9 w-9 object-contain"
+              className={`object-contain transition-[width,height] duration-500 ease-out ${
+                aDefile ? "h-8 w-8" : "h-9 w-9"
+              }`}
             />
 
             <span className="flex flex-col">
@@ -139,14 +188,14 @@ export default function Header() {
           <div className="flex items-center gap-7 lg:gap-10">
             <nav
               aria-label="Navigation principale"
-              className="hidden items-center gap-7 lg:flex"
+              className="hidden items-center gap-8 lg:flex"
             >
               <a
                 href="#accueil"
                 onClick={(event) =>
                   allerVersSection(event, "#accueil")
                 }
-                className="text-[12px] text-[#2F2C28] transition-colors duration-500 ease-out hover:text-[#C9A35B]"
+                className={lienPrincipalClassName}
               >
                 Accueil
               </a>
@@ -154,9 +203,12 @@ export default function Header() {
               <a
                 href="#savoir-faire"
                 onClick={(event) =>
-                  allerVersSection(event, "#savoir-faire")
+                  allerVersSection(
+                    event,
+                    "#savoir-faire",
+                  )
                 }
-                className="text-[12px] text-[#2F2C28] transition-colors duration-500 ease-out hover:text-[#C9A35B]"
+                className={lienPrincipalClassName}
               >
                 Nos savoir-faire
               </a>
@@ -164,19 +216,35 @@ export default function Header() {
               <a
                 href="#ce-qui-nous-anime"
                 onClick={(event) =>
-                  allerVersSection(event, "#ce-qui-nous-anime")
+                  allerVersSection(
+                    event,
+                    "#ce-qui-nous-anime",
+                  )
                 }
-                className="text-[12px] text-[#2F2C28] transition-colors duration-500 ease-out hover:text-[#C9A35B]"
+                className={lienPrincipalClassName}
               >
                 Ce qui nous anime
               </a>
 
               <a
+                href="#questions"
+                onClick={(event) =>
+                  allerVersSection(event, "#questions")
+                }
+                className={lienPrincipalClassName}
+              >
+                Questions
+              </a>
+
+              <a
                 href="#entrer-en-relation"
                 onClick={(event) =>
-                  allerVersSection(event, "#entrer-en-relation")
+                  allerVersSection(
+                    event,
+                    "#entrer-en-relation",
+                  )
                 }
-                className="flex items-center gap-2.5 text-[12px] text-[#2F2C28] transition-colors duration-500 ease-out hover:text-[#C9A35B]"
+                className={`flex items-center gap-2.5 ${lienPrincipalClassName}`}
               >
                 <svg
                   aria-hidden="true"
@@ -188,6 +256,7 @@ export default function Header() {
                     d="M3.75 6.75h16.5v10.5H3.75V6.75Z"
                     strokeWidth="1.2"
                   />
+
                   <path
                     d="m4.5 7.5 7.5 5.25 7.5-5.25"
                     strokeWidth="1.2"
@@ -203,7 +272,7 @@ export default function Header() {
               aria-expanded={menuOuvert}
               aria-controls="menu-chapitres"
               onClick={() => setMenuOuvert(true)}
-              className="text-[10px] uppercase tracking-[0.22em] text-[#2F2C28] transition-colors duration-500 ease-out hover:text-[#C9A35B]"
+              className="text-[10px] uppercase tracking-[0.28em] text-[#2F2C28] transition-colors duration-500 ease-out hover:text-[#C9A35B]"
             >
               Menu
             </button>
@@ -219,14 +288,15 @@ export default function Header() {
             role="dialog"
             aria-modal="true"
             aria-label="Menu principal"
+            style={{ colorScheme: "light" }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{
-              duration: 0.55,
+              duration: 0.65,
               ease: [0.22, 1, 0.36, 1],
             }}
-            className="fixed inset-0 z-[70] bg-[#F5F1E8]"
+            className="fixed inset-0 z-[70] overflow-y-auto bg-[#F5F1E8] [color-scheme:light]"
           >
             <motion.button
               type="button"
@@ -240,13 +310,13 @@ export default function Header() {
                 delay: 0.12,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="absolute right-6 top-8 z-[90] text-[10px] uppercase tracking-[0.22em] text-[#2F2C28] transition-colors duration-500 ease-out hover:text-[#C9A35B] sm:right-8 lg:right-12 xl:right-16"
+              className="absolute right-6 top-8 z-[90] text-[10px] uppercase tracking-[0.28em] text-[#2F2C28] transition-colors duration-500 ease-out hover:text-[#C9A35B] sm:right-8 lg:right-12 xl:right-16"
             >
               Fermer
             </motion.button>
 
             <div className="mx-auto flex min-h-screen max-w-[1500px] flex-col px-6 pb-10 pt-6 sm:px-8 lg:px-12 xl:px-16">
-              {/* Logo */}
+              {/* LOGO */}
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -261,10 +331,14 @@ export default function Header() {
                 <a
                   href="#accueil"
                   onClick={(event) =>
-                    allerVersSection(event, "#accueil", true)
+                    allerVersSection(
+                      event,
+                      "#accueil",
+                      true,
+                    )
                   }
                   aria-label="Retour à l’accueil"
-                  className="flex items-center gap-3"
+                  className="flex items-center gap-3.5"
                 >
                   <Image
                     src="/images/logo.svg"
@@ -286,57 +360,80 @@ export default function Header() {
                 </a>
               </motion.div>
 
-              {/* Contenu principal */}
-              <div className="grid flex-1 items-center gap-16 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24">
+              {/* CONTENU PRINCIPAL */}
+              <div className="grid flex-1 items-center gap-14 py-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24 lg:py-0">
                 <div className="flex flex-col lg:pl-[8%]">
                   <nav
                     aria-label="Navigation des chapitres"
-                    className="flex flex-col gap-7"
+                    className="flex flex-col gap-7 sm:gap-8"
                   >
-                    {chapitres.map((chapitre, index) => (
-                      <motion.a
-                        key={chapitre.href}
-                        href={chapitre.href}
-                        onClick={(event) =>
-                          allerVersSection(
-                            event,
-                            chapitre.href,
-                            true,
-                          )
-                        }
-                        initial={{ opacity: 0, y: 18 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: 8 }}
-                        transition={{
-                          duration: 0.75,
-                          delay: 0.18 + index * 0.09,
-                          ease: [0.22, 1, 0.36, 1],
-                        }}
-                        className="group relative w-fit py-1 pl-5 font-serif text-[1.75rem] leading-none text-[#1E1E1E] transition-colors duration-500 ease-out hover:text-[#C9A35B] sm:text-[2rem]"
-                      >
-                        <span
-                          aria-hidden="true"
-                          className="absolute bottom-1 left-0 top-1 w-px origin-center scale-y-0 bg-[#C9A35B] transition-transform duration-500 ease-out group-hover:scale-y-100"
-                        />
+                    {chapitres.map(
+                      (chapitre, index) => (
+                        <motion.a
+                          key={chapitre.href}
+                          href={chapitre.href}
+                          onClick={(event) =>
+                            allerVersSection(
+                              event,
+                              chapitre.href,
+                              true,
+                            )
+                          }
+                          initial={{
+                            opacity: 0,
+                            y: 18,
+                          }}
+                          animate={{
+                            opacity: 1,
+                            y: 0,
+                          }}
+                          exit={{
+                            opacity: 0,
+                            y: 8,
+                          }}
+                          transition={{
+                            duration: 0.75,
+                            delay:
+                              0.18 + index * 0.09,
+                            ease: [
+                              0.22,
+                              1,
+                              0.36,
+                              1,
+                            ],
+                          }}
+                          className="group relative w-fit py-1 pl-5 font-serif text-[1.8rem] leading-none text-[#1E1E1E] transition-colors duration-500 ease-out hover:text-[#C9A35B] sm:text-[2.1rem]"
+                        >
+                          <span
+                            aria-hidden="true"
+                            className="absolute bottom-1 left-0 top-1 w-px origin-center scale-y-0 bg-[#C9A35B] transition-transform duration-500 ease-out group-hover:scale-y-100"
+                          />
 
-                        <span className="inline-block transition-transform duration-500 ease-out group-hover:translate-x-1">
-                          {chapitre.title}
-                        </span>
-                      </motion.a>
-                    ))}
+                          <span className="inline-block transition-transform duration-500 ease-out group-hover:translate-x-1">
+                            {chapitre.title}
+                          </span>
+                        </motion.a>
+                      ),
+                    )}
                   </nav>
 
-                  {/* Réseaux et e-mail */}
+                  {/* RÉSEAUX ET E-MAIL */}
                   <motion.div
-                    initial={{ opacity: 0, y: 14 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    initial={{
+                      opacity: 0,
+                      y: 14,
+                    }}
+                    animate={{
+                      opacity: 1,
+                      y: 0,
+                    }}
                     exit={{ opacity: 0 }}
                     transition={{
                       duration: 0.75,
-                      delay: 0.62,
+                      delay: 0.72,
                       ease: [0.22, 1, 0.36, 1],
                     }}
-                    className="mt-20 flex items-center gap-7 text-[#1E1E1E]/70"
+                    className="mt-14 flex items-center gap-7 text-[#1E1E1E]/70 sm:mt-16"
                   >
                     <a
                       href="#"
@@ -357,12 +454,14 @@ export default function Header() {
                           rx="4.5"
                           strokeWidth="1.4"
                         />
+
                         <circle
                           cx="12"
                           cy="12"
                           r="4"
                           strokeWidth="1.4"
                         />
+
                         <circle
                           cx="17.4"
                           cy="6.8"
@@ -392,19 +491,23 @@ export default function Header() {
                           rx="1.5"
                           strokeWidth="1.4"
                         />
+
                         <path
                           d="M8 10v7"
                           strokeWidth="1.4"
                         />
+
                         <path
                           d="M8 7.5v.1"
                           strokeWidth="2"
                           strokeLinecap="round"
                         />
+
                         <path
                           d="M12 10v7"
                           strokeWidth="1.4"
                         />
+
                         <path
                           d="M12 13c0-1.8 1-3 2.5-3s2.5 1.2 2.5 3v4"
                           strokeWidth="1.4"
@@ -427,6 +530,7 @@ export default function Header() {
                           d="M3.75 6.75h16.5v10.5H3.75V6.75Z"
                           strokeWidth="1.2"
                         />
+
                         <path
                           d="m4.5 7.5 7.5 5.25 7.5-5.25"
                           strokeWidth="1.2"
@@ -436,32 +540,32 @@ export default function Header() {
                   </motion.div>
                 </div>
 
-                {/* Phrase discrète */}
+                {/* SIGNATURE */}
                 <motion.div
                   initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0 }}
                   transition={{
                     duration: 0.9,
-                    delay: 0.78,
+                    delay: 0.88,
                     ease: [0.22, 1, 0.36, 1],
                   }}
                   className="hidden items-end justify-center lg:flex"
                 >
                   <p className="mb-10 text-[14px] tracking-[0.08em] text-[#8D7B64]">
-                    Créer moins. Signifier davantage.
+                    Créer avec sens.
                   </p>
                 </motion.div>
               </div>
 
-              {/* Navigation mobile */}
+              {/* NAVIGATION MOBILE */}
               <motion.div
                 initial={{ opacity: 0, y: 14 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0 }}
                 transition={{
                   duration: 0.75,
-                  delay: 0.72,
+                  delay: 0.82,
                   ease: [0.22, 1, 0.36, 1],
                 }}
                 className="mt-auto border-t border-[#C9A35B]/20 pt-7 lg:hidden"

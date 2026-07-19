@@ -1,3 +1,6 @@
+import type { Metadata } from "next";
+import "./globals.css";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://toison-dor-site.vercel.app"),
 
@@ -6,7 +9,8 @@ export const metadata: Metadata = {
     template: "%s | Toison d’Or",
   },
 
-  description,
+  description:
+    "Toison d'Or, maison de création dédiée aux identités de marque, aux expériences digitales et aux supports de communication.",
 
   applicationName: "Toison d’Or",
 
@@ -25,7 +29,8 @@ export const metadata: Metadata = {
     url: "https://toison-dor-site.vercel.app",
     siteName: "Toison d’Or",
     title: "Toison d’Or | Maison de création et identité de marque",
-    description,
+    description:
+      "Toison d'Or, maison de création dédiée aux identités de marque, aux expériences digitales et aux supports de communication.",
     images: [
       {
         url: "/images/og-image.jpg",
@@ -39,7 +44,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Toison d’Or | Maison de création et identité de marque",
-    description,
+    description:
+      "Toison d'Or, maison de création dédiée aux identités de marque, aux expériences digitales et aux supports de communication.",
     images: ["/images/og-image.jpg"],
   },
 
@@ -48,3 +54,15 @@ export const metadata: Metadata = {
     shortcut: "/favicon.ico",
   },
 };
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="fr">
+      <body>{children}</body>
+    </html>
+  );
+}

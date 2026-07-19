@@ -6,6 +6,7 @@ import LeGeste from "./ui/LeGeste";
 import PrendreForme from "./ui/PrendreForme";
 import CeQuiNousAnime from "./ui/CeQuiNousAnime";
 import NosHistoires from "./ui/NosHistoires";
+import Questions from "./ui/Questions";
 import EntrerEnRelation from "./ui/EntrerEnRelation";
 import Footer from "./ui/Footer";
 import ScrollToTop from "./ui/ScrollToTop";
@@ -21,6 +22,7 @@ export default function Home() {
       <PrendreForme />
       <CeQuiNousAnime />
       <NosHistoires />
+      <Questions />
       <EntrerEnRelation />
       <Footer />
       <ScrollToTop />

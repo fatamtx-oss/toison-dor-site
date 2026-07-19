@@ -9,7 +9,8 @@ export default function Hero() {
   return (
     <section
       id="accueil"
-      className="relative min-h-screen overflow-hidden bg-[#F5F1E8]"
+      style={{ colorScheme: "light" }}
+      className="relative min-h-screen overflow-hidden bg-[#F5F1E8] [color-scheme:light]"
     >
       <Image
         src="/images/hero-final.jpg"
@@ -30,7 +31,13 @@ export default function Hero() {
           </Reveal>
 
           <Reveal delay={0.2}>
-            <p className="mt-6 font-serif text-[1.45rem] font-light leading-[1.1] tracking-[-0.01em] text-[#8D7B64] sm:mt-7 sm:text-[1.65rem] lg:mt-8 lg:text-[1.75rem]">
+            <p
+              style={{
+                color: "#756553",
+                WebkitTextFillColor: "#756553",
+              }}
+              className="mt-6 font-serif text-[1.45rem] font-light leading-[1.1] tracking-[-0.01em] sm:mt-7 sm:text-[1.65rem] lg:mt-8 lg:text-[1.75rem]"
+            >
               Briller autrement
             </p>
           </Reveal>
