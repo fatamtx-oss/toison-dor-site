@@ -98,7 +98,7 @@ export default function Footer() {
 
         <Reveal delay={0.25}>
           <a
-            href="mailto:info@toisondor.ch"
+            href="mailto:bonjour@toisondor.agency"
             className="mt-8 flex items-center gap-3 text-sm tracking-[0.04em] text-[#1E1E1E]/65 transition-colors duration-300 hover:text-[#C9A35B]"
           >
             <svg
@@ -117,7 +117,7 @@ export default function Footer() {
               />
             </svg>
 
-            <span>info@toisondor.ch</span>
+            <span>bonjour@toisondor.agency</span>
           </a>
         </Reveal>
 
