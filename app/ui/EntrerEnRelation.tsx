@@ -1,3 +1,7 @@
+"use client";
+
+import { FormEvent, useState } from "react";
+
 import Reveal from "./animations/Reveal";
 import RevealTitle from "./animations/RevealTitle";
 
@@ -7,7 +11,45 @@ const champClassName =
 const conteneurChampClassName =
   "relative border-b border-[#C9A35B]/45 after:absolute after:-bottom-px after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-[#C9A35B] after:transition-transform after:duration-700 after:ease-out focus-within:after:scale-x-100";
 
+type StatutFormulaire = "repos" | "envoi" | "succes" | "erreur";
+
 export default function EntrerEnRelation() {
+  const [statut, setStatut] = useState<StatutFormulaire>("repos");
+
+  async function envoyerFormulaire(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setStatut("envoi");
+
+    const formulaire = event.currentTarget;
+    const donneesFormulaire = new FormData(formulaire);
+
+    const donnees = {
+      prenom: donneesFormulaire.get("prenom"),
+      email: donneesFormulaire.get("email"),
+      projet: donneesFormulaire.get("projet"),
+    };
+
+    try {
+      const reponse = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(donnees),
+      });
+
+      if (!reponse.ok) {
+        throw new Error("Erreur lors de l’envoi");
+      }
+
+      formulaire.reset();
+      setStatut("succes");
+    } catch (error) {
+      console.error(error);
+      setStatut("erreur");
+    }
+  }
+
   return (
     <section
       id="entrer-en-relation"
@@ -34,7 +76,7 @@ export default function EntrerEnRelation() {
           </div>
 
           <Reveal delay={0.25}>
-            <form className="space-y-11">
+            <form className="space-y-11" onSubmit={envoyerFormulaire}>
               <div>
                 <label
                   htmlFor="prenom"
@@ -49,6 +91,7 @@ export default function EntrerEnRelation() {
                     name="prenom"
                     type="text"
                     autoComplete="given-name"
+                    required
                     className={champClassName}
                   />
                 </div>
@@ -68,6 +111,7 @@ export default function EntrerEnRelation() {
                     name="email"
                     type="email"
                     autoComplete="email"
+                    required
                     className={champClassName}
                   />
                 </div>
@@ -86,10 +130,39 @@ export default function EntrerEnRelation() {
                     id="projet"
                     name="projet"
                     rows={5}
+                    required
                     className={`${champClassName} resize-none leading-8`}
                   />
                 </div>
               </div>
+
+              <button
+                type="submit"
+                disabled={statut === "envoi"}
+                className="inline-flex min-w-52 items-center justify-center border border-[#C9A35B] px-8 py-4 text-xs uppercase tracking-[0.22em] text-[#1E1E1E] transition-all duration-500 hover:bg-[#C9A35B] hover:text-[#F5F1E8] disabled:cursor-not-allowed disabled:opacity-50"
+              >
+                {statut === "envoi" ? "Envoi en cours..." : "Envoyer la demande"}
+              </button>
+
+              {statut === "succes" && (
+                <p
+                  role="status"
+                  className="text-sm leading-7 text-[#1E1E1E]/70"
+                >
+                  Merci pour votre message. Nous reviendrons vers vous très
+                  prochainement.
+                </p>
+              )}
+
+              {statut === "erreur" && (
+                <p
+                  role="alert"
+                  className="text-sm leading-7 text-[#8A3F35]"
+                >
+                  Une erreur est survenue. Merci de réessayer dans quelques
+                  instants.
+                </p>
+              )}
 
               <p className="text-xs leading-6 text-[#1E1E1E]/55">
                 Nous répondons personnellement à chaque demande.
