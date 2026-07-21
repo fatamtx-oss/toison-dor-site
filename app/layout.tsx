@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 
 const siteUrl = "https://toisondor.agency";
@@ -29,9 +30,7 @@ export const metadata: Metadata = {
   ],
 
   creator: "Toison d’Or",
-
   publisher: "Toison d’Or",
-
   category: "Communication et création digitale",
 
   robots: {
@@ -89,6 +88,8 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body>{children}</body>
+
+      <GoogleAnalytics gaId="G-0G37ERN2XF" />
     </html>
   );
 }
