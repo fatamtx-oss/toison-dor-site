@@ -14,7 +14,7 @@ export default function Hero() {
     >
       <Image
         src="/images/hero-final.jpg"
-        alt="Univers Toison d'Or"
+        alt="Univers créatif de Toison d’Or"
         fill
         priority
         className="object-cover object-center"
@@ -25,7 +25,7 @@ export default function Hero() {
       <div className="relative z-10 flex min-h-screen items-start px-8 pb-16 pt-40 sm:px-12 sm:pt-48 lg:px-28 lg:pb-20 lg:pt-64 xl:px-36">
         <div className="max-w-[720px]">
           <Reveal>
-            <h1 className="max-w-[330px] font-serif text-[4.15rem] leading-[0.88] tracking-[-0.035em] text-[#1E1E1E] sm:max-w-none sm:text-[5rem] sm:leading-[0.92] lg:text-[clamp(3.8rem,5vw,6.5rem)] lg:leading-[0.95]">
+            <h1 className="max-w-[350px] font-serif text-[4.15rem] font-normal leading-[0.92] tracking-[0.012em] text-[#2D2926] sm:max-w-none sm:text-[5rem] sm:leading-[0.94] sm:tracking-[0.015em] lg:text-[clamp(3.8rem,5vw,6.5rem)] lg:leading-[0.96]">
               TOISON D&apos;OR
             </h1>
           </Reveal>
@@ -33,10 +33,10 @@ export default function Hero() {
           <Reveal delay={0.2}>
             <p
               style={{
-                color: "#756553",
-                WebkitTextFillColor: "#756553",
+                color: "#8A7661",
+                WebkitTextFillColor: "#8A7661",
               }}
-              className="mt-6 font-serif text-[1.45rem] font-light leading-[1.1] tracking-[-0.01em] sm:mt-7 sm:text-[1.65rem] lg:mt-8 lg:text-[1.75rem]"
+              className="mt-3 pl-3 font-serif text-[1.45rem] font-light not-italic leading-[1.15] tracking-[0.005em] sm:mt-4 sm:pl-5 sm:text-[1.65rem] lg:pl-7 lg:text-[1.75rem]"
             >
               Briller autrement
             </p>
