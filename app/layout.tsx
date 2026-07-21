@@ -4,38 +4,39 @@ import "./globals.css";
 
 const siteUrl = "https://toisondor.agency";
 
-const title =
-  "Toison d'Or | Maison de création · Identité de marque, web design & communication";
+const titre =
+  "Toison d’Or | Maison de création · Identité de marque, web design & communication";
 
 const description =
-  "Toison d'Or est une maison de création indépendante qui accompagne les entreprises, les marques et les créateurs dans la révélation de leur identité. Branding, identité visuelle, web design, création de contenus et communication digitale.";
+  "Toison d’Or est une maison de création indépendante qui accompagne les entreprises, les marques et les créateurs dans la révélation de leur identité. Branding, identité visuelle, web design, création de contenus et communication digitale sont pensés avec exigence, sens et authenticité.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
 
   title: {
-    default: title,
-    template: "%s | Toison d'Or",
+    default: titre,
+    template: "%s | Toison d’Or",
   },
 
   description,
 
-  applicationName: "Toison d'Or",
+  applicationName: "Toison d’Or",
 
   authors: [
     {
-      name: "Toison d'Or",
+      name: "Toison d’Or",
       url: siteUrl,
     },
   ],
 
-  creator: "Toison d'Or",
-  publisher: "Toison d'Or",
-  category: "Communication",
+  creator: "Toison d’Or",
+  publisher: "Toison d’Or",
+  category: "Communication et création digitale",
 
   robots: {
     index: true,
     follow: true,
+
     googleBot: {
       index: true,
       follow: true,
@@ -53,22 +54,22 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_CH",
     url: siteUrl,
-    siteName: "Toison d'Or",
-    title,
+    siteName: "Toison d’Or",
+    title: titre,
     description,
     images: [
       {
         url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Toison d'Or",
+        alt: "Toison d’Or — Maison de création",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title,
+    title: titre,
     description,
     images: ["/images/og-image.jpg"],
   },
@@ -81,12 +82,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
     <html lang="fr">
-      <head>
+      <body>
+        {children}
+
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-0G37ERN2XF"
           strategy="afterInteractive"
@@ -100,9 +103,7 @@ export default function RootLayout({
             gtag('config', 'G-0G37ERN2XF');
           `}
         </Script>
-      </head>
-
-      <body>{children}</body>
+      </body>
     </html>
   );
 }
