@@ -1,58 +1,83 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+const siteUrl = "https://toisondor.agency";
+
+const titre =
+  "Toison d’Or | Maison de création et identité de marque";
+
+const description =
+  "Toison d’Or accompagne les entreprises, les marques et les créateurs dans la conception de leur identité, de leur présence digitale et de leurs supports de communication.";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://toison-dor-site.vercel.app"),
+  metadataBase: new URL(siteUrl),
 
   title: {
-    default: "Toison d’Or | Maison de création et identité de marque",
+    default: titre,
     template: "%s | Toison d’Or",
   },
 
-  description:
-    "Toison d'Or, maison de création dédiée aux identités de marque, aux expériences digitales et aux supports de communication.",
+  description,
 
   applicationName: "Toison d’Or",
 
-  robots: {
-    index: true,
-    follow: true,
-  },
+  authors: [
+    {
+      name: "Toison d’Or",
+      url: siteUrl,
+    },
+  ],
+
+  creator: "Toison d’Or",
+  publisher: "Toison d’Or",
 
   alternates: {
     canonical: "/",
   },
 
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+
   openGraph: {
     type: "website",
     locale: "fr_CH",
-    url: "https://toison-dor-site.vercel.app",
+    url: siteUrl,
     siteName: "Toison d’Or",
-    title: "Toison d’Or | Maison de création et identité de marque",
-    description:
-      "Toison d'Or, maison de création dédiée aux identités de marque, aux expériences digitales et aux supports de communication.",
+    title: titre,
+    description,
     images: [
       {
         url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Toison d’Or — Maison de création et identité de marque",
+        alt: "Toison d’Or — Maison de création",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Toison d’Or | Maison de création et identité de marque",
-    description:
-      "Toison d'Or, maison de création dédiée aux identités de marque, aux expériences digitales et aux supports de communication.",
+    title: titre,
+    description,
     images: ["/images/og-image.jpg"],
   },
 
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
+
+  category: "Communication et création digitale",
 };
 
 export default function RootLayout({
