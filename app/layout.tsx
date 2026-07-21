@@ -4,10 +4,10 @@ import "./globals.css";
 const siteUrl = "https://toisondor.agency";
 
 const titre =
-  "Toison d’Or | Maison de création et identité de marque";
+  "Toison d’Or | Maison de création · Identité de marque, web design & communication";
 
 const description =
-  "Toison d’Or accompagne les entreprises, les marques et les créateurs dans la conception de leur identité, de leur présence digitale et de leurs supports de communication.";
+  "Toison d’Or est une maison de création indépendante qui accompagne les entreprises, les marques et les créateurs dans la révélation de leur identité. Branding, identité visuelle, web design, création de contenus et communication digitale sont pensés avec exigence, sens et authenticité.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -29,15 +29,15 @@ export const metadata: Metadata = {
   ],
 
   creator: "Toison d’Or",
+
   publisher: "Toison d’Or",
 
-  alternates: {
-    canonical: "/",
-  },
+  category: "Communication et création digitale",
 
   robots: {
     index: true,
     follow: true,
+
     googleBot: {
       index: true,
       follow: true,
@@ -45,6 +45,10 @@ export const metadata: Metadata = {
       "max-snippet": -1,
       "max-video-preview": -1,
     },
+  },
+
+  alternates: {
+    canonical: "/",
   },
 
   openGraph: {
@@ -74,10 +78,7 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
   },
-
-  category: "Communication et création digitale",
 };
 
 export default function RootLayout({

@@ -2,11 +2,14 @@ import type { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: {
-      userAgent: "*",
-      allow: "/",
-    },
+    rules: [
+      {
+        userAgent: "*",
+        allow: "/",
+      },
+    ],
 
-    sitemap: "https://www.toisondor.ch/sitemap.xml",
+    sitemap: "https://toisondor.agency/sitemap.xml",
+    host: "https://toisondor.agency",
   };
 }
