@@ -22,10 +22,10 @@ export default function Hero() {
 
       <div className="absolute inset-0 bg-[#F5F1E8]/5" />
 
-      <div className="relative z-10 flex min-h-screen items-start px-8 pb-16 pt-40 sm:px-12 sm:pt-48 lg:px-28 lg:pb-20 lg:pt-64 xl:px-36">
+      <div className="relative z-10 flex min-h-screen items-start px-8 pb-16 pt-40 sm:px-12 sm:pt-48 lg:px-28 lg:text-[#4A413B] pb-20 lg:pt-64 xl:px-36">
         <div className="max-w-[720px]">
           <Reveal>
-            <h1 className="max-w-[350px] font-serif text-[4.15rem] font-normal leading-[0.92] tracking-[0.012em] text-[#2D2926] sm:max-w-none sm:text-[5rem] sm:leading-[0.94] sm:tracking-[0.015em] lg:text-[clamp(3.8rem,5vw,6.5rem)] lg:leading-[0.96]">
+            <h1 className="max-w-[350px] font-serif text-[4.15rem] font-normal leading-[0.92] tracking-[0.012em]  sm:max-w-none sm:text-[5rem] sm:leading-[0.94] sm:tracking-[0.015em] lg:text-[clamp(3.8rem,5vw,6.5rem)] lg:leading-[0.96]">
               TOISON D&apos;OR
             </h1>
           </Reveal>
@@ -46,8 +46,7 @@ export default function Hero() {
             <a
               href="#adn"
               aria-label="Aller au chapitre Notre ADN"
-              className="group mt-14 inline-flex w-fit flex-col items-start text-[10px] uppercase tracking-[0.22em] text-[#2F2C28] transition-colors duration-500 ease-out hover:text-[#C9A35B] sm:mt-16 sm:text-[11px] lg:mt-24"
-            >
+              className="group mt-20 inline-flex w-fit flex-col items-start text-[10px] uppercase tracking-[0.22em] text-[#2F2C28] transition-colors duration-500 ease-out hover:text-[#C9A35B] sm:mt-20 sm:text-[11px] lg:mt-28"
               <span>Notre ADN</span>
 
               <motion.svg

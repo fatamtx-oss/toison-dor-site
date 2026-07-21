@@ -34,54 +34,58 @@ export default function Adn() {
   return (
     <section
       id="adn"
-      className="bg-[#F5F1E8] px-10 pb-32 pt-24 sm:px-14 lg:px-24 xl:px-36"
+      aria-labelledby="adn-title"
+      className="scroll-mt-24 bg-[#F5F1E8] px-8 pb-28 pt-24 sm:px-12 sm:pb-32 sm:pt-28 lg:px-24 lg:pb-40 lg:pt-36 xl:px-36"
     >
       <div className="mx-auto max-w-7xl">
         {/* Introduction */}
         <div className="max-w-3xl">
           <Reveal>
-            <p className="mb-8 text-sm uppercase tracking-[0.35em] text-[#C9A35B]">
+            <p className="mb-7 text-[11px] uppercase tracking-[0.32em] text-[#B28A45] sm:text-xs">
               Notre ADN
             </p>
           </Reveal>
 
           <Reveal delay={0.1}>
-            <p className="max-w-2xl text-[15px] leading-8 text-[#1E1E1E]/70">
-              Toison d&apos;Or accompagne les marques portées par un savoir-faire,
-              une vision ou une histoire forte, qui souhaitent gagner en clarté,
-              en cohérence et en présence.
+            <p className="max-w-2xl text-[15px] leading-8 text-[#5F554B] sm:text-base sm:leading-8">
+              Toison d&apos;Or accompagne les marques portées par un
+              savoir-faire, une vision ou une histoire forte, qui souhaitent
+              gagner en clarté, en cohérence et en présence.
             </p>
           </Reveal>
         </div>
 
         {/* Grand titre */}
         <Reveal delay={0.18}>
-          <div className="mt-12 max-w-5xl">
-            <h2 className="font-serif text-5xl leading-[1.05] tracking-[-0.03em] text-[#1E1E1E] sm:text-6xl lg:text-[4.25rem] xl:text-[4.75rem]">
+          <div className="mt-12 max-w-5xl sm:mt-14 lg:mt-16">
+            <h2
+              id="adn-title"
+              className="font-serif text-[2.65rem] font-normal leading-[1.08] tracking-[-0.025em] text-[#4A413B] sm:text-[3.5rem] lg:text-[4.25rem] xl:text-[4.75rem]"
+            >
               Donner une présence juste
-              <br />
-              à ce que vous avez construit
+              <br className="hidden sm:block" />
+              <span className="sm:block"> à ce que vous avez construit</span>
             </h2>
           </div>
         </Reveal>
 
         {/* Cibles */}
-        <div className="mt-24">
+        <div className="mt-24 sm:mt-28 lg:mt-32">
           <Reveal>
-            <p className="mb-11 text-xs uppercase tracking-[0.28em] text-[#C9A35B]">
+            <p className="mb-10 text-[11px] uppercase tracking-[0.28em] text-[#B28A45] sm:text-xs">
               Nous travaillons aux côtés de
             </p>
           </Reveal>
 
-          <div className="grid gap-12 md:grid-cols-3 md:gap-10">
+          <div className="grid gap-14 md:grid-cols-3 md:gap-10 lg:gap-14">
             {cibles.map((cible, index) => (
               <Reveal key={cible.title} delay={index * 0.1}>
-                <article>
-                  <h3 className="font-serif text-3xl leading-tight text-[#1E1E1E]">
+                <article className="max-w-sm">
+                  <h3 className="font-serif text-[1.85rem] font-normal leading-[1.15] text-[#4A413B] sm:text-3xl">
                     {cible.title}
                   </h3>
 
-                  <p className="mt-7 max-w-sm text-[15px] leading-8 text-[#1E1E1E]/70">
+                  <p className="mt-6 text-[15px] leading-8 text-[#62584E]">
                     {cible.text}
                   </p>
                 </article>
@@ -90,23 +94,29 @@ export default function Adn() {
           </div>
         </div>
 
+        {/* Séparation */}
+        <div
+          aria-hidden="true"
+          className="my-28 h-px w-full bg-[#C9A35B]/20 sm:my-32 lg:my-36"
+        />
+
         {/* Valeurs */}
-        <div className="mt-36">
+        <div>
           <Reveal>
-            <p className="mb-11 text-xs uppercase tracking-[0.28em] text-[#C9A35B]">
+            <p className="mb-10 text-[11px] uppercase tracking-[0.28em] text-[#B28A45] sm:text-xs">
               Ce qui guide notre travail
             </p>
           </Reveal>
 
-          <div className="grid gap-12 md:grid-cols-3 md:gap-10">
+          <div className="grid gap-14 md:grid-cols-3 md:gap-10 lg:gap-14">
             {valeurs.map((valeur, index) => (
               <Reveal key={valeur.title} delay={index * 0.1}>
-                <article>
-                  <h3 className="font-serif text-3xl leading-tight text-[#1E1E1E]">
+                <article className="max-w-sm">
+                  <h3 className="font-serif text-[1.85rem] font-normal leading-[1.15] text-[#4A413B] sm:text-3xl">
                     {valeur.title}
                   </h3>
 
-                  <p className="mt-7 max-w-sm text-[15px] leading-8 text-[#1E1E1E]/70">
+                  <p className="mt-6 text-[15px] leading-8 text-[#62584E]">
                     {valeur.text}
                   </p>
                 </article>
