@@ -1,42 +1,41 @@
 import type { Metadata } from "next";
-import { GoogleAnalytics } from "@next/third-parties/google";
+import Script from "next/script";
 import "./globals.css";
 
 const siteUrl = "https://toisondor.agency";
 
-const titre =
-  "Toison d’Or | Maison de création · Identité de marque, web design & communication";
+const title =
+  "Toison d'Or | Maison de création · Identité de marque, web design & communication";
 
 const description =
-  "Toison d’Or est une maison de création indépendante qui accompagne les entreprises, les marques et les créateurs dans la révélation de leur identité. Branding, identité visuelle, web design, création de contenus et communication digitale sont pensés avec exigence, sens et authenticité.";
+  "Toison d'Or est une maison de création indépendante qui accompagne les entreprises, les marques et les créateurs dans la révélation de leur identité. Branding, identité visuelle, web design, création de contenus et communication digitale.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
 
   title: {
-    default: titre,
-    template: "%s | Toison d’Or",
+    default: title,
+    template: "%s | Toison d'Or",
   },
 
   description,
 
-  applicationName: "Toison d’Or",
+  applicationName: "Toison d'Or",
 
   authors: [
     {
-      name: "Toison d’Or",
+      name: "Toison d'Or",
       url: siteUrl,
     },
   ],
 
-  creator: "Toison d’Or",
-  publisher: "Toison d’Or",
-  category: "Communication et création digitale",
+  creator: "Toison d'Or",
+  publisher: "Toison d'Or",
+  category: "Communication",
 
   robots: {
     index: true,
     follow: true,
-
     googleBot: {
       index: true,
       follow: true,
@@ -54,22 +53,22 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_CH",
     url: siteUrl,
-    siteName: "Toison d’Or",
-    title: titre,
+    siteName: "Toison d'Or",
+    title,
     description,
     images: [
       {
         url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Toison d’Or — Maison de création",
+        alt: "Toison d'Or",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: titre,
+    title,
     description,
     images: ["/images/og-image.jpg"],
   },
@@ -82,14 +81,28 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="fr">
-      <body>{children}</body>
+      <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-0G37ERN2XF"
+          strategy="afterInteractive"
+        />
 
-      <GoogleAnalytics gaId="G-0G37ERN2XF" />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-0G37ERN2XF');
+          `}
+        </Script>
+      </head>
+
+      <body>{children}</body>
     </html>
   );
 }
