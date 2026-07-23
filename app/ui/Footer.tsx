@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import Reveal from "./animations/Reveal";
 import RevealImage from "./animations/RevealImage";
@@ -8,13 +9,15 @@ export default function Footer() {
     <footer className="bg-[#E9E3D2] px-10 py-24 sm:px-14 lg:px-24 xl:px-36">
       <div className="mx-auto flex max-w-7xl flex-col items-center text-center">
         <RevealImage>
-          <Image
-            src="/images/logo.svg"
-            alt="Logo de Toison d'Or"
-            width={56}
-            height={56}
-            className="h-14 w-14 object-contain"
-          />
+          <Link href="/" aria-label="Retour à l’accueil">
+            <Image
+              src="/images/logo.svg"
+              alt="Logo de Toison d'Or"
+              width={56}
+              height={56}
+              className="h-14 w-14 object-contain"
+            />
+          </Link>
         </RevealImage>
 
         <Reveal delay={0.1}>
@@ -123,14 +126,16 @@ export default function Footer() {
 
         <Reveal delay={0.3}>
           <div className="mt-14 text-xs leading-6 text-[#1E1E1E]/45">
-            <p>© 2026 Toison d&apos;Or</p>
+            <p>
+              © {new Date().getFullYear()} Toison d&apos;Or
+            </p>
 
-            <a
-              href="#"
+            <Link
+              href="/informations-legales"
               className="mt-1 inline-block transition-colors duration-300 hover:text-[#C9A35B]"
             >
-              Mentions légales
-            </a>
+             Informations légales
+            </Link>
           </div>
         </Reveal>
       </div>
