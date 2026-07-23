@@ -130,12 +130,23 @@ export default function Footer() {
               © {new Date().getFullYear()} Toison d&apos;Or
             </p>
 
-            <Link
-              href="/informations-legales"
-              className="mt-1 inline-block transition-colors duration-300 hover:text-[#C9A35B]"
-            >
-             Informations légales
-            </Link>
+            <div className="mt-2 flex flex-wrap items-center justify-center gap-4">
+           <Link
+                href="/informations-legales"
+                className="transition-colors duration-300 hover:text-[#C9A35B]"
+             >
+                Informations légales
+          </Link>
+
+         <span>•</span>
+
+           <Link
+                href="/politique-de-confidentialite"
+                className="transition-colors duration-300 hover:text-[#C9A35B]"
+             >
+                Politique de confidentialité
+           </Link>
+           </div>
           </div>
         </Reveal>
       </div>
