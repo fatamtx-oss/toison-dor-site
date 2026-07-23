@@ -20,18 +20,22 @@ export default function CeQuiNousAnime() {
   return (
     <section
       id="ce-qui-nous-anime"
-      className="bg-[#F5F1E8] px-10 py-32 sm:px-14 lg:px-24 xl:px-36"
+      aria-labelledby="convictions-title"
+      className="scroll-mt-24 bg-[#F5F1E8] px-8 py-28 sm:px-12 sm:py-32 lg:px-24 lg:py-40 xl:px-36"
     >
       <div className="mx-auto max-w-7xl">
         <Reveal>
-          <p className="mb-10 text-sm uppercase tracking-[0.35em] text-[#C9A35B]">
+          <p className="mb-8 text-[11px] uppercase tracking-[0.32em] text-[#B28A45] sm:text-xs">
             Ce qui nous anime
           </p>
         </Reveal>
 
         <div className="max-w-5xl">
           <RevealTitle delay={0.1}>
-            <h2 className="font-serif text-5xl leading-[1.06] tracking-[-0.03em] text-[#1E1E1E] sm:text-6xl lg:text-[4.25rem] xl:text-[4.75rem]">
+            <h2
+              id="convictions-title"
+              className="font-serif text-[2.65rem] font-normal leading-[1.08] tracking-[-0.025em] text-[#4A413B] sm:text-[3.5rem] lg:text-[4.25rem] xl:text-[4.75rem]"
+            >
               Nous préférons les marques
               <br />
               qui durent aux effets
@@ -41,7 +45,7 @@ export default function CeQuiNousAnime() {
           </RevealTitle>
 
           <Reveal delay={0.25}>
-            <p className="mt-10 max-w-3xl text-[15px] leading-8 text-[#1E1E1E]/70">
+            <p className="mt-10 max-w-3xl text-[15px] leading-8 text-[#62584E] sm:text-base">
               Si vous cherchez le superficiel, nous ne sommes probablement pas
               le bon choix. Si, en revanche, vous souhaitez construire une
               marque sincère, cohérente et durable, alors nous parlerons le
@@ -50,15 +54,20 @@ export default function CeQuiNousAnime() {
           </Reveal>
         </div>
 
-        <div className="mt-28 grid gap-16 md:grid-cols-3">
+        <div className="mt-24 grid gap-14 md:grid-cols-3 md:gap-10 lg:mt-28 lg:gap-14">
           {convictions.map((item, index) => (
             <Reveal key={item.title} delay={0.1 + index * 0.1}>
-              <article>
-                <h3 className="font-serif text-3xl leading-tight text-[#1E1E1E] sm:text-4xl">
+              <article className="group max-w-sm transition-transform duration-500 ease-out hover:-translate-y-1">
+                <h3 className="font-serif text-[2rem] font-normal leading-[1.12] text-[#4A413B] sm:text-[2.3rem]">
                   {item.title}
                 </h3>
 
-                <p className="mt-5 max-w-sm text-[15px] leading-8 text-[#1E1E1E]/70">
+                <div
+                  aria-hidden="true"
+                  className="mt-5 h-px w-14 bg-[#C9A35B]/35 transition-all duration-500 group-hover:w-20 group-hover:bg-[#C9A35B]/60"
+                />
+
+                <p className="mt-6 text-[15px] leading-8 text-[#62584E]">
                   {item.text}
                 </p>
               </article>

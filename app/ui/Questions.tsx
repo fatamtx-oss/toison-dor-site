@@ -55,11 +55,11 @@ const questions: AccordionItem[] = [
               key={service.title}
               className="border border-[#C9A35B]/20 bg-[#FBF8F1] p-5 sm:p-6"
             >
-              <p className="font-serif text-[1.1rem] text-[#2F2C28]">
+              <p className="font-serif text-[1.1rem] text-[#4A413B]">
                 {service.title}
               </p>
 
-              <p className="mt-2 text-[14px] leading-7 text-[#6E655B]">
+              <p className="mt-2 text-[14px] leading-7 text-[#62584E]">
                 {service.text}
               </p>
             </div>
@@ -86,11 +86,11 @@ const questions: AccordionItem[] = [
         </p>
 
         <div className="border-l border-[#C9A35B] bg-[#FBF8F1] px-5 py-4 sm:px-6">
-          <p className="font-serif text-[1.05rem] leading-7 text-[#2F2C28]">
+          <p className="font-serif text-[1.05rem] leading-7 text-[#4A413B]">
             Durée indicative&nbsp;: entre 45 et 60 minutes.
           </p>
 
-          <p className="mt-2 text-[14px] leading-7 text-[#6E655B]">
+          <p className="mt-2 text-[14px] leading-7 text-[#62584E]">
             La rencontre peut avoir lieu par visioconférence,
             par téléphone ou en personne, selon votre lieu et
             vos disponibilités.
@@ -146,15 +146,15 @@ const questions: AccordionItem[] = [
               key={step.number}
               className="border-t border-[#C9A35B]/40 pt-4"
             >
-              <span className="text-[10px] uppercase tracking-[0.22em] text-[#A18454]">
+              <span className="text-[10px] uppercase tracking-[0.22em] text-[#B28A45]">
                 {step.number}
               </span>
 
-              <p className="mt-3 font-serif text-[1.05rem] text-[#2F2C28]">
+              <p className="mt-3 font-serif text-[1.05rem] text-[#4A413B]">
                 {step.title}
               </p>
 
-              <p className="mt-2 text-[14px] leading-7 text-[#6E655B]">
+              <p className="mt-2 text-[14px] leading-7 text-[#62584E]">
                 {step.text}
               </p>
             </div>
@@ -190,7 +190,7 @@ const questions: AccordionItem[] = [
         </p>
 
         <div className="overflow-hidden border border-[#C9A35B]/20">
-          <div className="grid bg-[#EEE7DA] px-5 py-3 text-[10px] uppercase tracking-[0.16em] text-[#756957] sm:grid-cols-[0.85fr_1.15fr]">
+          <div className="grid bg-[#EEE7DA] px-5 py-3 text-[10px] uppercase tracking-[0.16em] text-[#62584E] sm:grid-cols-[0.85fr_1.15fr]">
             <span>Votre situation</span>
             <span className="hidden sm:block">
               Ce que nous clarifions ensemble
@@ -215,11 +215,11 @@ const questions: AccordionItem[] = [
               key={situation}
               className="grid gap-2 border-t border-[#C9A35B]/15 px-5 py-4 sm:grid-cols-[0.85fr_1.15fr] sm:gap-8"
             >
-              <p className="font-medium text-[#3A352F]">
+              <p className="font-medium text-[#4A413B]">
                 {situation}
               </p>
 
-              <p className="text-[#6E655B]">
+              <p className="text-[#62584E]">
                 {clarification}
               </p>
             </div>
@@ -253,15 +253,15 @@ const questions: AccordionItem[] = [
           <table className="min-w-[700px] w-full border-collapse text-left">
             <thead className="bg-[#EEE7DA]">
               <tr>
-                <th className="px-5 py-4 text-[10px] font-medium uppercase tracking-[0.16em] text-[#756957]">
+                <th className="px-5 py-4 text-[10px] font-medium uppercase tracking-[0.16em] text-[#62584E]">
                   Étape
                 </th>
 
-                <th className="px-5 py-4 text-[10px] font-medium uppercase tracking-[0.16em] text-[#756957]">
+                <th className="px-5 py-4 text-[10px] font-medium uppercase tracking-[0.16em] text-[#62584E]">
                   Ce qu&apos;elle comprend
                 </th>
 
-                <th className="px-5 py-4 text-[10px] font-medium uppercase tracking-[0.16em] text-[#756957]">
+                <th className="px-5 py-4 text-[10px] font-medium uppercase tracking-[0.16em] text-[#62584E]">
                   Résultat
                 </th>
               </tr>
@@ -302,15 +302,15 @@ const questions: AccordionItem[] = [
                   key={row.step}
                   className="border-t border-[#C9A35B]/15 align-top"
                 >
-                  <td className="px-5 py-5 font-serif text-[1rem] text-[#2F2C28]">
+                  <td className="px-5 py-5 font-serif text-[1rem] text-[#4A413B]">
                     {row.step}
                   </td>
 
-                  <td className="px-5 py-5 text-[14px] leading-7 text-[#6E655B]">
+                  <td className="px-5 py-5 text-[14px] leading-7 text-[#62584E]">
                     {row.includes}
                   </td>
 
-                  <td className="px-5 py-5 text-[14px] leading-7 text-[#6E655B]">
+                  <td className="px-5 py-5 text-[14px] leading-7 text-[#62584E]">
                     {row.result}
                   </td>
                 </tr>
@@ -346,22 +346,22 @@ const questions: AccordionItem[] = [
 
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="border border-[#C9A35B]/20 bg-[#FBF8F1] p-5">
-            <p className="font-serif text-[#2F2C28]">
+            <p className="font-serif text-[#4A413B]">
               Photographie
             </p>
 
-            <p className="mt-2 text-[14px] leading-7 text-[#6E655B]">
+            <p className="mt-2 text-[14px] leading-7 text-[#62584E]">
               Portraits, architecture, produits,
               artisanat, reportages et images de marque.
             </p>
           </div>
 
           <div className="border border-[#C9A35B]/20 bg-[#FBF8F1] p-5">
-            <p className="font-serif text-[#2F2C28]">
+            <p className="font-serif text-[#4A413B]">
               Vidéo
             </p>
 
-            <p className="mt-2 text-[14px] leading-7 text-[#6E655B]">
+            <p className="mt-2 text-[14px] leading-7 text-[#62584E]">
               Films de présentation, réseaux sociaux,
               interviews ou contenus immersifs.
             </p>
@@ -389,11 +389,11 @@ const questions: AccordionItem[] = [
         </p>
 
         <div className="border-l border-[#C9A35B] bg-[#FBF8F1] px-5 py-4">
-          <p className="font-serif text-[#2F2C28]">
+          <p className="font-serif text-[#4A413B]">
             Créer avec sens.
           </p>
 
-          <p className="mt-2 text-[14px] leading-7 text-[#6E655B]">
+          <p className="mt-2 text-[14px] leading-7 text-[#62584E]">
             Nous préférons quelques publications utiles à une
             communication abondante sans véritable impact.
           </p>
@@ -605,15 +605,15 @@ const questions: AccordionItem[] = [
               key={step.title}
               className="relative border border-[#C9A35B]/20 bg-[#FBF8F1] p-5"
             >
-              <span className="text-[10px] uppercase tracking-[0.2em] text-[#A18454]">
+              <span className="text-[10px] uppercase tracking-[0.2em] text-[#B28A45]">
                 0{index + 1}
               </span>
 
-              <p className="mt-3 font-serif text-[#2F2C28]">
+              <p className="mt-3 font-serif text-[#4A413B]">
                 {step.title}
               </p>
 
-              <p className="mt-2 text-[14px] leading-7 text-[#6E655B]">
+              <p className="mt-2 text-[14px] leading-7 text-[#62584E]">
                 {step.text}
               </p>
             </div>
@@ -723,7 +723,7 @@ const questions: AccordionItem[] = [
               key={item}
               className="border border-[#C9A35B]/20 bg-[#FBF8F1] p-6"
             >
-              <p className="font-serif text-[#2F2C28]">
+              <p className="font-serif text-[#4A413B]">
                 {item}
               </p>
             </div>
@@ -761,11 +761,11 @@ const questions: AccordionItem[] = [
               key={step}
               className="text-center"
             >
-              <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full border border-[#C9A35B]/40 font-serif text-[#8D6A31]">
+              <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full border border-[#C9A35B]/40 font-serif text-[#B28A45]">
                 {index + 1}
               </div>
 
-              <p className="mt-4 font-serif text-[#2F2C28]">
+              <p className="mt-4 font-serif text-[#4A413B]">
                 {step}
               </p>
             </div>
@@ -786,9 +786,10 @@ export default function Questions() {
   return (
     <section
       id="questions"
-      className="bg-[#F5F1E8] py-28 sm:py-36"
+      aria-labelledby="questions-title"
+      className="scroll-mt-24 bg-[#F5F1E8] py-28 sm:py-32 lg:py-40"
     >
-      <div className="mx-auto max-w-[1100px] px-6 sm:px-8 lg:px-10">
+      <div className="mx-auto max-w-[1100px] px-8 sm:px-12 lg:px-10">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -797,17 +798,20 @@ export default function Questions() {
             duration: 0.8,
             ease: [0.22, 1, 0.36, 1],
           }}
-          className="mb-20"
+          className="mb-20 sm:mb-24"
         >
-          <span className="text-[11px] uppercase tracking-[0.25em] text-[#A18454]">
+          <span className="text-[11px] uppercase tracking-[0.32em] text-[#B28A45] sm:text-xs">
             Questions
           </span>
 
-          <h2 className="mt-5 font-serif text-5xl leading-tight text-[#1E1E1E]">
+          <h2
+            id="questions-title"
+            className="mt-6 font-serif text-[2.65rem] font-normal leading-[1.08] tracking-[-0.025em] text-[#4A413B] sm:text-[3.5rem] lg:text-[4.25rem]"
+          >
             Avant notre rencontre
           </h2>
 
-          <p className="mt-8 max-w-3xl text-[17px] leading-9 text-[#6E655B]">
+          <p className="mt-8 max-w-3xl text-[16px] leading-8 text-[#62584E] sm:text-[17px] sm:leading-9">
             Choisir une maison de création est une décision
             importante. Cette page rassemble les questions que
             l'on nous pose le plus souvent afin de vous aider à
@@ -830,13 +834,13 @@ export default function Questions() {
             delay: 0.15,
             ease: [0.22, 1, 0.36, 1],
           }}
-          className="mt-28 border-t border-[#C9A35B]/20 pt-16 text-center"
+          className="mt-24 border-t border-[#C9A35B]/20 pt-16 text-center sm:mt-28 sm:pt-20"
         >
-          <h3 className="font-serif text-4xl text-[#1E1E1E]">
+          <h3 className="font-serif text-[2.25rem] font-normal leading-tight text-[#4A413B] sm:text-4xl">
             La suite s'écrira ensemble.
           </h3>
 
-          <p className="mx-auto mt-6 max-w-2xl text-[17px] leading-9 text-[#6E655B]">
+          <p className="mx-auto mt-6 max-w-2xl text-[16px] leading-8 text-[#62584E] sm:text-[17px] sm:leading-9">
             Si vous ne trouvez pas la réponse à votre question,
             nous serons heureux d'en discuter lors d'un premier
             échange.
@@ -844,7 +848,7 @@ export default function Questions() {
 
           <a
             href="#entrer-en-relation"
-            className="mt-12 inline-flex items-center justify-center border border-[#C9A35B] px-8 py-4 text-[11px] uppercase tracking-[0.22em] text-[#2F2C28] transition-all duration-500 hover:bg-[#C9A35B] hover:text-white"
+            className="mt-16 inline-flex items-center justify-center border border-[#C9A35B] px-8 py-4 text-[11px] uppercase tracking-[0.22em] text-[#4A413B] transition-all duration-500 ease-out hover:bg-[#C9A35B] hover:text-[#F5F1E8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A35B]/40 focus-visible:ring-offset-4 focus-visible:ring-offset-[#F5F1E8]"
           >
             Entrer en relation
           </a>

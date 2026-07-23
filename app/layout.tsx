@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import Script from "next/script";
+
 import "./globals.css";
 
 const siteUrl = "https://toisondor.agency";
 
 const titre =
-  "Toison d’Or | Maison de création · Identité de marque, web design & communication";
+  "Toison d’Or | Maison de création en Suisse romande";
 
 const description =
-  "Toison d’Or est une maison de création indépendante qui accompagne les entreprises, les marques et les créateurs dans la révélation de leur identité. Branding, identité visuelle, web design, création de contenus et communication digitale sont pensés avec exigence, sens et authenticité.";
+  "Toison d’Or accompagne entreprises, marques et créateurs en identité visuelle, branding, web design, contenus et communication digitale.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -59,10 +59,10 @@ export const metadata: Metadata = {
     description,
     images: [
       {
-        url: "/images/og-image.jpg",
+        url: "/images/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Toison d’Or — Maison de création",
+        alt: "Toison d’Or — Briller autrement",
       },
     ],
   },
@@ -71,7 +71,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: titre,
     description,
-    images: ["/images/og-image.jpg"],
+    images: ["/images/og-image.png"],
   },
 
   icons: {
@@ -86,24 +86,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr">
-      <body>
-        {children}
-
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-0G37ERN2XF"
-          strategy="afterInteractive"
-        />
-
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-0G37ERN2XF');
-          `}
-        </Script>
-      </body>
+    <html lang="fr-CH">
+      <body>{children}</body>
     </html>
   );
 }

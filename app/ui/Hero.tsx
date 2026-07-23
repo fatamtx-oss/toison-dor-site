@@ -9,12 +9,13 @@ export default function Hero() {
   return (
     <section
       id="accueil"
+      aria-labelledby="hero-title"
       style={{ colorScheme: "light" }}
       className="relative min-h-screen overflow-hidden bg-[#F5F1E8] [color-scheme:light]"
     >
       <Image
         src="/images/hero-final.jpg"
-        alt="Univers créatif de Toison d’Or"
+        alt="Direction artistique de la maison de création Toison d'Or"
         fill
         priority
         className="object-cover object-center"
@@ -25,7 +26,10 @@ export default function Hero() {
       <div className="relative z-10 flex min-h-screen items-start px-8 pb-16 pt-40 text-[#4A413B] sm:px-12 sm:pt-48 lg:px-28 lg:pb-20 lg:pt-64 xl:px-36">
         <div className="max-w-[720px]">
           <Reveal>
-            <h1 className="max-w-[350px] font-serif text-[4.15rem] font-normal leading-[0.92] tracking-[0.012em] sm:max-w-none sm:text-[5rem] sm:leading-[0.94] sm:tracking-[0.015em] lg:text-[clamp(3.8rem,5vw,6.5rem)] lg:leading-[0.96]">
+            <h1
+              id="hero-title"
+              className="max-w-[350px] font-serif text-[4.15rem] font-normal leading-[0.92] tracking-[0.012em] sm:max-w-none sm:text-[5rem] sm:leading-[0.94] sm:tracking-[0.015em] lg:text-[clamp(3.8rem,5vw,6.5rem)] lg:leading-[0.96]"
+            >
               TOISON D&apos;OR
             </h1>
           </Reveal>

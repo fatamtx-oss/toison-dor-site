@@ -10,7 +10,7 @@ export default function Footer() {
         <RevealImage>
           <Image
             src="/images/logo.svg"
-            alt="Toison d'Or"
+            alt="Logo de Toison d'Or"
             width={56}
             height={56}
             className="h-14 w-14 object-contain"
