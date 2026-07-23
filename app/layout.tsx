@@ -74,10 +74,7 @@ export const metadata: Metadata = {
     images: ["/images/og-image.png"],
   },
 
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-  },
+
 };
 
 export default function RootLayout({
