@@ -40,6 +40,7 @@ export default function PrendreForme() {
               Elle naît lorsque chaque détail
               <br className="hidden sm:block" />
               <span className="sm:block">
+                {" "}
                 raconte la même intention
               </span>
             </p>
