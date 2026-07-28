@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 import "./globals.css";
 
-const siteUrl = "https://toisondor.agency";
+const siteUrl = "https://www.toisondor.agency";
 
 const titre =
   "Toison d’Or | Maison de création en Suisse romande";
@@ -73,8 +73,6 @@ export const metadata: Metadata = {
     description,
     images: ["/images/og-image.png"],
   },
-
-
 };
 
 export default function RootLayout({
