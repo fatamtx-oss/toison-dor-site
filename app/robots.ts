@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
       },
     ],
 
-    sitemap: "https://toisondor.agency/sitemap.xml",
-    host: "https://toisondor.agency",
+    sitemap: "https://www.toisondor.agency/sitemap.xml",
+    host: "https://www.toisondor.agency",
   };
 }
