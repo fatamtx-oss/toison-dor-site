@@ -35,7 +35,7 @@ export default function Footer() {
         <Reveal delay={0.2}>
           <div className="mt-8 flex items-center gap-7">
             <a
-              href="https://www.instagram.com/mariposafa"
+              href="https://www.instagram.com/toisondor.agency?igsh=MW1zcWNmc3JwMGtmbw=="
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram de Toison d'Or"
@@ -67,7 +67,7 @@ export default function Footer() {
             </a>
 
             <a
-              href="TON_LIEN_LINKEDIN"
+              href="https://www.linkedin.com/company/toisondor/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn de Toison d'Or"

@@ -436,9 +436,11 @@ export default function Header() {
                     className="mt-14 flex items-center gap-7 text-[#1E1E1E]/70 sm:mt-16"
                   >
                     <a
-                      href="#"
-                      aria-label="Instagram"
-                      className="transition-colors duration-500 ease-out hover:text-[#C9A35B]"
+                     href="https://www.instagram.com/toisondor.agency?igsh=MW1zcWNmc3JwMGtmbw=="
+                     target="_blank"
+                     rel="noopener noreferrer"
+                     aria-label="Instagram"
+                     className="transition-colors duration-500 ease-out hover:text-[#C9A35B]"
                     >
                       <svg
                         aria-hidden="true"
@@ -473,10 +475,12 @@ export default function Header() {
                     </a>
 
                     <a
-                      href="#"
-                      aria-label="LinkedIn"
-                      className="transition-colors duration-500 ease-out hover:text-[#C9A35B]"
-                    >
+                          href="https://www.linkedin.com/company/toisondor/"
+                         target="_blank"
+                         rel="noopener noreferrer"
+                         aria-label="LinkedIn"
+                         className="transition-colors duration-500 ease-out hover:text-[#C9A35B]"
+                      >
                       <svg
                         aria-hidden="true"
                         viewBox="0 0 24 24"
