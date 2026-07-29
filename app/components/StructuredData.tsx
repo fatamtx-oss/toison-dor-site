@@ -15,16 +15,18 @@ const structuredData = {
   name: "Toison d'Or",
   url: "https://www.toisondor.agency",
   logo: "https://www.toisondor.agency/images/logo.svg",
+  image: "https://www.toisondor.agency/images/og-image.png",
 
   description:
     "Toison d'Or accompagne les entreprises, marques, indépendants et créateurs dans la création d'identités visuelles, de sites internet et de stratégies de communication.",
 
   email: "bonjour@toisondor.agency",
+  priceRange: "Sur devis",
 
   address: {
-  "@type": "PostalAddress",
-  addressCountry: "CH",
-},
+    "@type": "PostalAddress",
+    addressCountry: "CH",
+  },
 
   sameAs: [
     "https://www.linkedin.com/company/toisondor",
