@@ -35,8 +35,10 @@ export default function Footer() {
         <Reveal delay={0.2}>
           <div className="mt-8 flex items-center gap-7">
             <a
-              href="#"
-              aria-label="Instagram"
+              href="https://www.instagram.com/mariposafa"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram de Toison d'Or"
               className="text-[#1E1E1E]/60 transition-colors duration-300 hover:text-[#C9A35B]"
             >
               <svg
@@ -65,8 +67,10 @@ export default function Footer() {
             </a>
 
             <a
-              href="#"
-              aria-label="LinkedIn"
+              href="TON_LIEN_LINKEDIN"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn de Toison d'Or"
               className="text-[#1E1E1E]/60 transition-colors duration-300 hover:text-[#C9A35B]"
             >
               <svg
@@ -126,27 +130,25 @@ export default function Footer() {
 
         <Reveal delay={0.3}>
           <div className="mt-14 text-xs leading-6 text-[#1E1E1E]/45">
-            <p>
-              © {new Date().getFullYear()} Toison d&apos;Or
-            </p>
+            <p>© {new Date().getFullYear()} Toison d&apos;Or</p>
 
             <div className="mt-2 flex flex-wrap items-center justify-center gap-4">
-           <Link
+              <Link
                 href="/informations-legales"
                 className="transition-colors duration-300 hover:text-[#C9A35B]"
-             >
+              >
                 Informations légales
-          </Link>
+              </Link>
 
-         <span>•</span>
+              <span>•</span>
 
-           <Link
+              <Link
                 href="/politique-de-confidentialite"
                 className="transition-colors duration-300 hover:text-[#C9A35B]"
-             >
+              >
                 Politique de confidentialité
-           </Link>
-           </div>
+              </Link>
+            </div>
           </div>
         </Reveal>
       </div>
