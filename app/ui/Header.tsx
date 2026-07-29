@@ -152,7 +152,7 @@ export default function Header() {
       >
         <div
           className={`mx-auto flex max-w-[1500px] items-center justify-between px-6 transition-[height] duration-500 ease-out sm:px-8 lg:px-12 xl:px-16 ${
-            aDefile ? "h-[66px]" : "h-[74px]"
+            aDefile ? "h-[68px]" : "h-[74px]"
           }`}
         >
           <a
@@ -244,26 +244,9 @@ export default function Header() {
                     "#entrer-en-relation",
                   )
                 }
-                className={`flex items-center gap-2.5 ${lienPrincipalClassName}`}
+                className={lienPrincipalClassName}
               >
-                <svg
-                  aria-hidden="true"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  className="h-[15px] w-[15px] stroke-current"
-                >
-                  <path
-                    d="M3.75 6.75h16.5v10.5H3.75V6.75Z"
-                    strokeWidth="1.2"
-                  />
-
-                  <path
-                    d="m4.5 7.5 7.5 5.25 7.5-5.25"
-                    strokeWidth="1.2"
-                  />
-                </svg>
-
-                <span>Entrer en relation</span>
+                Entrer en relation
               </a>
             </nav>
 

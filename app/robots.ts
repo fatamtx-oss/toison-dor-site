@@ -6,10 +6,14 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
+        disallow: [
+          "/api/",
+        ],
       },
     ],
 
     sitemap: "https://www.toisondor.agency/sitemap.xml",
+
     host: "https://www.toisondor.agency",
   };
 }

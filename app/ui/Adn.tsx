@@ -35,7 +35,7 @@ export default function Adn() {
     <section
       id="adn"
       aria-labelledby="adn-title"
-      className="scroll-mt-24 bg-[#F5F1E8] px-8 pb-28 pt-24 sm:px-12 sm:pb-32 sm:pt-28 lg:px-24 lg:pb-40 lg:pt-36 xl:px-36"
+      className="bg-[#F5F1E8] px-8 pb-28 pt-24 sm:px-12 sm:pb-32 sm:pt-28 lg:px-24 lg:pb-40 lg:pt-36 xl:px-36"
     >
       <div className="mx-auto max-w-7xl">
         {/* Introduction */}
@@ -48,23 +48,25 @@ export default function Adn() {
 
           <Reveal delay={0.1}>
             <p className="max-w-2xl text-[15px] leading-8 text-[#5F554B] sm:text-base sm:leading-8">
-              Toison d&apos;Or accompagne les marques portées par un
-              savoir-faire, une vision ou une histoire forte, qui souhaitent
-              gagner en clarté, en cohérence et en présence.
+              Toison d’Or accompagne les marques portées par un savoir-faire,
+              une vision ou une histoire forte, qui souhaitent gagner en
+              clarté, en cohérence et en présence.
             </p>
           </Reveal>
         </div>
 
         {/* Grand titre */}
         <Reveal delay={0.18}>
-          <div className="mt-12 max-w-5xl sm:mt-14 lg:mt-16">
+          <div className="mt-10 max-w-5xl sm:mt-14 lg:mt-16">
             <h2
               id="adn-title"
               className="font-serif text-[2.65rem] font-normal leading-[1.08] tracking-[-0.025em] text-[#4A413B] sm:text-[3.5rem] lg:text-[4.25rem] xl:text-[4.75rem]"
             >
               Donner une présence juste
-              <br className="hidden sm:block" />
-              <span className="sm:block"> à ce que vous avez construit</span>
+              <br className="hidden sm:block" />{" "}
+              <span className="sm:block">
+                à ce que vous avez construit
+              </span>
             </h2>
           </div>
         </Reveal>

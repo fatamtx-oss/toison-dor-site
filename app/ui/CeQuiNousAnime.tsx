@@ -48,8 +48,8 @@ export default function CeQuiNousAnime() {
             <p className="mt-10 max-w-3xl text-[15px] leading-8 text-[#62584E] sm:text-base">
               Si vous cherchez le superficiel, nous ne sommes probablement pas
               le bon choix. Si, en revanche, vous souhaitez construire une
-              marque sincère, cohérente et durable, alors nous parlerons le
-              même langage.
+              marque sincère, cohérente et durable, alors nous parlerons le même
+              langage.
             </p>
           </Reveal>
         </div>
@@ -57,7 +57,7 @@ export default function CeQuiNousAnime() {
         <div className="mt-24 grid gap-14 md:grid-cols-3 md:gap-10 lg:mt-28 lg:gap-14">
           {convictions.map((item, index) => (
             <Reveal key={item.title} delay={0.1 + index * 0.1}>
-              <article className="group max-w-sm transition-transform duration-500 ease-out hover:-translate-y-1">
+              <article className="group max-w-sm">
                 <h3 className="font-serif text-[2rem] font-normal leading-[1.12] text-[#4A413B] sm:text-[2.3rem]">
                   {item.title}
                 </h3>

@@ -15,13 +15,16 @@ export default function Hero() {
     >
       <Image
         src="/images/hero-final.jpg"
-        alt="Direction artistique de la maison de création Toison d'Or"
+        alt="Direction artistique de la maison de création Toison d’Or"
         fill
         priority
         className="object-cover object-center"
       />
 
-      <div className="absolute inset-0 bg-[#F5F1E8]/5" />
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-[#F5F1E8]/5"
+      />
 
       <div className="relative z-10 flex min-h-screen items-start px-8 pb-16 pt-40 text-[#4A413B] sm:px-12 sm:pt-48 lg:px-28 lg:pb-20 lg:pt-64 xl:px-36">
         <div className="max-w-[720px]">
@@ -37,10 +40,10 @@ export default function Hero() {
           <Reveal delay={0.2}>
             <p
               style={{
-                color: "#8A7661",
-                WebkitTextFillColor: "#8A7661",
+                color: "#756452",
+                WebkitTextFillColor: "#756452",
               }}
-              className="mt-3 pl-3 font-serif text-[1.45rem] font-light not-italic leading-[1.15] tracking-[0.005em] sm:mt-4 sm:pl-5 sm:text-[1.65rem] lg:pl-7 lg:text-[1.75rem]"
+              className="mt-5 pl-3 font-serif text-[1.45rem] font-light not-italic leading-[1.15] tracking-[0.005em] sm:mt-6 sm:pl-5 sm:text-[1.65rem] lg:pl-7 lg:text-[1.75rem]"
             >
               Briller autrement
             </p>
@@ -59,10 +62,10 @@ export default function Hero() {
                 viewBox="0 0 24 24"
                 fill="none"
                 animate={{
-                  y: [0, 5, 0],
+                  y: [0, 3, 0],
                 }}
                 transition={{
-                  duration: 3,
+                  duration: 4,
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}

@@ -16,7 +16,7 @@ export default function LeGeste() {
           <div className="lg:pt-4">
             <Reveal>
               <p className="mb-8 text-[11px] uppercase tracking-[0.32em] text-[#B28A45] sm:text-xs">
-                Le Geste
+                Le geste
               </p>
             </Reveal>
 
@@ -37,8 +37,8 @@ export default function LeGeste() {
               <div className="mt-10 max-w-lg space-y-7 text-[15px] leading-8 text-[#62584E] sm:text-base">
                 <p>
                   Nous commençons par observer, questionner et écouter. Ce temps
-                  nous permet de distinguer l&apos;essentiel du superflu et de
-                  poser une direction claire.
+                  nous permet de distinguer l’essentiel du superflu et de poser
+                  une direction claire.
                 </p>
 
                 <p>
