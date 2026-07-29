@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import "./globals.css";
+import StructuredData from "./components/StructuredData";
 
 const siteUrl = "https://www.toisondor.agency";
 
@@ -82,7 +83,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr-CH">
-      <body>{children}</body>
+      <body>
+  <StructuredData />
+  {children}
+</body>
     </html>
   );
 }
