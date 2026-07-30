@@ -15,7 +15,7 @@ export default function Hero() {
     >
       <Image
         src="/images/hero-final.jpg"
-        alt="Direction artistique de la maison de création Toison d’Or"
+        alt="Direction artistique de la source d'identité Toison d’Or"
         fill
         priority
         className="object-cover object-center"

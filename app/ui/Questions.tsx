@@ -812,7 +812,7 @@ export default function Questions() {
           </h2>
 
           <p className="mt-8 max-w-3xl text-[16px] leading-8 text-[#62584E] sm:text-[17px] sm:leading-9">
-            Choisir une maison de création est une décision
+            Choisir une source d'identité est une décision
             importante. Cette page rassemble les questions que
             l'on nous pose le plus souvent afin de vous aider à
             comprendre notre manière de travailler avant notre

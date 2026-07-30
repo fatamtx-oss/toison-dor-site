@@ -28,7 +28,7 @@ export default function Footer() {
 
         <Reveal delay={0.15}>
           <p className="mt-2 text-[8px] uppercase tracking-[0.24em] text-[#A89B8C]">
-            Maison de création
+            Source d'identité
           </p>
         </Reveal>
 

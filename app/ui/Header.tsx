@@ -180,7 +180,7 @@ export default function Header() {
               </span>
 
               <span className="text-[7px] uppercase tracking-[0.22em] text-[#A89B8C]">
-                Maison de création
+                Source d'identité
               </span>
             </span>
           </a>
@@ -337,7 +337,7 @@ export default function Header() {
                     </span>
 
                     <span className="text-[7px] uppercase tracking-[0.22em] text-[#A89B8C]">
-                      Maison de création
+                     Source d'identité
                     </span>
                   </span>
                 </a>

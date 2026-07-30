@@ -6,7 +6,7 @@ import FaqStructuredData from "./ui/FaqStructuredData";
 
 const siteUrl = "https://www.toisondor.agency";
 
-const titre = "Toison d’Or | Maison de création en Suisse romande";
+const titre = "Toison d’Or | Source d'identité en Suisse romande";
 
 const description =
   "Toison d’Or accompagne entreprises, marques et créateurs en Suisse romande dans la création d’identités visuelles, de sites web, de contenus et de communications digitales.";
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 
   keywords: [
     "agence de communication",
-    "maison de création",
+    "source d'identité",
     "identité visuelle",
     "branding",
     "création de marque",
