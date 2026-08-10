@@ -5,7 +5,7 @@ import RevealTitle from "./animations/RevealTitle";
 
 export default function NosHistoires() {
   return (
-    <section>
+    <section id="nos-histoires">
       <div className="flex min-h-[68vh] items-center justify-center">
         <div className="w-full max-w-5xl px-6 text-center">
           <RevealTitle delay={0.1}>
